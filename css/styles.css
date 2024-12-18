@@ -1,0 +1,699 @@
+/* Header principal */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    /* Hauteur du header */
+    background: linear-gradient(90deg, rgba(0, 24, 32, 0.95), rgba(0, 24, 32, 1));
+    display: flex;
+    align-items: center;
+    /* Centre verticalement */
+    justify-content: center;
+    /* Centre horizontalement */
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Container pour aligner le logo et la nav */
+#main-header .container {
+    width: 90%;
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+    /* Décale encore légèrement les éléments */
+}
+
+/* Logo - Centrage vertical parfait */
+.logo {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    /* Centre verticalement */
+    justify-content: center;
+    /* Centre horizontalement */
+    height: 100%;
+    /* Assure une hauteur égale au header */
+}
+
+.logo img {
+    height: 130px;
+    /* Taille ajustée du logo */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo img:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+    /* Lueur blanche au survol */
+    transform: scale(1.05);
+    /* Légère augmentation */
+}
+
+/* Navigation principale */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    /* Espacement entre les liens */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.main-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    /* Taille des liens */
+    font-weight: 400;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #d3d3d3;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive (à désactiver pour l'instant si pas nécessaire) */
+/* @media screen and (max-width: 1024px) {
+    .main-nav ul {
+        display: none; */
+        /* Cache les liens sur petit écran */
+    /* }
+
+    .burger-icon {
+        display: flex;
+    }
+} */
+
+/* Icône burger (pour le futur) */
+/* .burger-icon {
+    display: none; */
+    /* Désactivé par défaut */
+    /* flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-icon span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+} */
+
+
+ /* Fond spatial */
+ #space-background {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     background-color: #001820;
+     overflow: hidden;
+     z-index: -1;
+ }
+
+ #stars .star {
+     position: absolute;
+     width: 2px;
+     height: 2px;
+     background-color: white;
+     border-radius: 50%;
+     animation: glow 2s infinite alternate;
+ }
+
+ @keyframes glow {
+     from {
+         opacity: 0.8;
+     }
+
+     to {
+         opacity: 0.3;
+     }
+ }
+
+ /* Étoiles filantes */
+ #shooting-stars {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+ }
+
+
+ /* Contenu principal */
+ #main-content {
+     position: relative;
+     z-index: 1;
+     text-align: center;
+     color: #FFFFFF;
+     font-family: 'Arial', sans-serif;
+     padding: 50px;
+     margin-top: 20vh;
+ }
+
+ #main-content h1 {
+     font-size: 3rem;
+     line-height: 1.5;
+     color: #FFFFFF;
+     margin-bottom: 10px;
+ }
+
+ #main-content h1 span {
+     display: block;
+     font-size: 2rem;
+     color: #FFFFFF;
+ }
+
+ #main-content h1 strong {
+     font-size: 3.5rem;
+     color: #FFFFFF;
+ }
+
+ #main-content p {
+     font-size: 1.2rem;
+     color: #FFFFFF;
+     margin-bottom: 30px;
+ }
+
+
+
+
+
+
+ /* Boutons */
+ .buttons {
+     display: flex;
+     justify-content: center;
+     gap: 15px;
+ }
+
+ .btn {
+     padding: 15px 25px;
+     border-radius: 25px;
+     text-decoration: none;
+     font-size: 1rem;
+     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+     display: inline-block;
+ }
+
+ .btn-primary {
+     background: white;
+     color: #001820;
+     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+ }
+
+ .btn-secondary {
+     border: 2px solid white;
+     background: transparent;
+     color: white;
+     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+ }
+
+ .btn:hover {
+     transform: translateY(-5px);
+     box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.7);
+ }
+
+
+
+
+
+
+/* Section Compétences */
+#competences {
+    margin: 100px auto;
+    padding: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    text-transform: uppercase;
+}
+
+/* Espacement entre les sections */
+.competence-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 100px 0; /* Ajuste la marge verticale */
+}
+
+
+/* Description */
+.competence-description {
+    flex: 1;
+    max-width: 40%;
+    padding: 20px;
+    text-align: left;
+}
+
+.competence-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.competence-text-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    color: #e0e0e0;
+    line-height: 1.8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Conteneur principal */
+.competence-planetes {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+/* Grande planète centrale */
+.planete-main img {
+    position: absolute;
+    width: 300px;
+    /* Taille de la grande planète */
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.planete-orbite .planete {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+    /* Alignement du texte */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    transition: all 0.3s ease;
+}
+
+.planete-orbite .planete img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Correction centrage texte */
+.planete-orbite .planete::after {
+    content: attr(data-nom);
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: none;
+    /* Toujours caché sauf au clic */
+    pointer-events: none;
+    width: 100%;
+    /* Assure un bon centrage horizontal */
+    height: 80%;
+    /* Assure un bon centrage vertical */
+    line-height: 100px;
+    /* Ajuste selon la taille des planètes */
+    z-index: 10;
+}
+
+.planete-orbite .planete.clicked::after {
+    display: block;
+    /* Affiche le texte quand la planète est cliquée */
+}
+
+.planete-orbite .planete.clicked::after {
+    display: var(--clicked-text, block);
+}
+
+.planete-orbite .planete.clicked img {
+    opacity: 0.2;
+    /* Assombrit l'image */
+}
+
+/* Positionnement des petites planètes en arc de cercle */
+.planete-orbite .planete:nth-child(1) {
+    top: 18%;
+    left: 16%;
+}
+
+.planete-orbite .planete:nth-child(2) {
+    top: -5%;
+    left: 44%;
+    transform: translateX(-50%);
+}
+
+.planete-orbite .planete:nth-child(3) {
+    top: 15%;
+    right: 29%;
+}
+
+.planete-orbite .planete:nth-child(4) {
+    bottom: 16%;
+    left: 18%;
+}
+
+.planete-orbite .planete:nth-child(5) {
+    bottom: 5%;
+    left: 44%;
+    transform: translateX(-50%);
+}
+
+.planete-orbite .planete:nth-child(6) {
+    bottom: 15%;
+    right: 30%;
+}
+
+/* Réduction de l'espacement entre sections */
+.competence-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 100px 0;
+    /* Réduction de l'espacement vertical */
+}
+
+.competence-description {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.competence-planetes {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Section globale */
+#competences {
+    margin-top: 50px;
+    /* Ajuste l'espace global en haut */
+    margin-bottom: 50px;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    .competence-section {
+        flex-direction: column;
+        text-align: center;
+        margin: 40px 0;
+        /* Espacement entre sections */
+    }
+
+    .competence-description {
+        max-width: 90%;
+        margin: 0 auto 20px;
+    }
+
+    .competence-planetes {
+        position: relative;
+        width: 300px;
+        /* Taille réduite */
+        height: 300px;
+        /* Carré pour former un cercle */
+        margin: 0 auto;
+    }
+
+    /* Planète principale */
+    .planete-main img {
+        width: 100px;
+        /* Taille ajustée pour mobile */
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    /* Petites planètes autour */
+    .planete-orbite .planete {
+        position: absolute;
+        width: 60px;
+        /* Taille réduite */
+        height: 60px;
+        transition: all 0.3s ease;
+    }
+
+    /* Positionnement circulaire */
+    .planete-orbite .planete:nth-child(1) {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .planete-orbite .planete:nth-child(2) {
+        top: 20%;
+        right: 10%;
+    }
+
+    .planete-orbite .planete:nth-child(3) {
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+    }
+
+    .planete-orbite .planete:nth-child(4) {
+        bottom: 20%;
+        right: 10%;
+    }
+
+    .planete-orbite .planete:nth-child(5) {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .planete-orbite .planete:nth-child(6) {
+        bottom: 20%;
+        left: 10%;
+    }
+}
+
+
+.about-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.about-photo img.rounded-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-details {
+    flex: 1;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.about-title {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Footer principal */
+#main-footer {
+    background-color: #00232D;
+    color: white;
+    padding: 50px 0;
+    /* Augmente la hauteur du footer */
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Conteneur principal */
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Logo TG dans le footer */
+.footer-logo-tg {
+    position: absolute;
+    top: 15px;
+    /* Ajuste l'espacement */
+    left: 15px;
+}
+
+.footer-logo-tg img {
+    width: 140px;
+    /* Taille légèrement augmentée */
+    transition: filter 0.3s ease, transform 0.3s ease;
+    /* Ajout de la transition */
+}
+
+.footer-logo-tg img:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+    /* Lueur blanche au survol */
+    transform: scale(1.05);
+    /* Effet d'agrandissement léger */
+}
+
+/* Logo MMI en bas à gauche */
+.footer-mmi-logo {
+    position: absolute;
+    bottom: 30px;
+    /* Ajuste l'espacement */
+    left: 30px;
+}
+
+.footer-mmi-logo img {
+    width: 90px;
+    /* Taille légèrement augmentée */
+}
+
+/* Mentions légales en bas à droite */
+.footer-info {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Navigation des sections */
+.footer-nav {
+    margin: 30px 0;
+}
+
+.footer-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    /* Augmente l'espacement entre les sections */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #D3D3D3;
+}
+
+/* Séparateur */
+.footer-divider {
+    width: 70%;
+    /* Légèrement plus large */
+    height: 2px;
+    background-color: #D3D3D3;
+    margin: 20px auto;
+}
+
+/* Réseaux sociaux alignés au milieu */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Augmente l'espacement entre les icônes */
+    margin-bottom: 20px;
+}
+
+.footer-socials a {
+    font-size: 26px;
+    /* Icônes légèrement plus grandes */
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #D3D3D3;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-logo-tg,
+    .footer-mmi-logo,
+    .footer-info {
+        position: static;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-divider {
+        width: 80%;
+    }
+
+    .footer-socials {
+        margin-bottom: 20px;
+    }
+}
