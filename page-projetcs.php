@@ -1,43 +1,41 @@
 <?php
-/*
-Template Name: Page Projets
-*/
+/* Template Name: Projects */
 get_header();
 ?>
 
-<main class="projects-page">
-    <h1 class="page-title">Mes Projets</h1>
-
-    <!-- Filtres -->
+<div class="projects-container">
+    <h1>Mes Projets</h1>
     <div class="project-filters">
-        <button data-filter="all">Tous</button>
-        <button data-filter="dev">Développement</button>
-        <button data-filter="design">Design</button>
-        <button data-filter="comm">Communication</button>
+        <button class="filter-btn" data-category="all">Tous les projets</button>
+        <button class="filter-btn" data-category="developpement">Développement</button>
+        <button class="filter-btn" data-category="design">Design</button>
+        <button class="filter-btn" data-category="communication">Communication</button>
     </div>
 
-    <!-- Liste des projets -->
-    <div class="project-cards">
+    <div class="projects-grid">
         <?php
-        $args = [
+        $args = array(
             'post_type' => 'projects',
             'posts_per_page' => -1,
-        ];
-        $query = new WP_Query($args);
-
-        if ($query->have_posts()) :
-            while ($query->have_posts()) : $query->the_post();
-                $category = get_field('categorie'); // Catégorie ajoutée avec ACF
-                $summary = get_field('resume'); // Résumé
-        ?>
+        );
+        $projects = new WP_Query($args);
+        if ($projects->have_posts()) :
+            while ($projects->have_posts()) : $projects->the_post();
+                $resume = get_field('resume');
+                $category = get_field('categorie');
+                ?>
                 <div class="project-card" data-category="<?php echo esc_attr($category); ?>">
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail('medium'); ?>
-                        <h2><?php the_title(); ?></h2>
-                        <p><?php echo esc_html($summary); ?></p>
+                        <div class="project-image">
+                            <?php the_post_thumbnail('medium'); ?>
+                        </div>
+                        <div class="project-info">
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php echo esc_html($resume); ?></p>
+                        </div>
                     </a>
                 </div>
-        <?php
+            <?php
             endwhile;
             wp_reset_postdata();
         else :
@@ -45,6 +43,27 @@ get_header();
         endif;
         ?>
     </div>
-</main>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const category = button.getAttribute("data-category");
+
+                projectCards.forEach(card => {
+                    if (category === "all" || card.getAttribute("data-category") === category) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    });
+</script>
 
 <?php get_footer(); ?>

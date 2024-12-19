@@ -28,9 +28,9 @@
             <!-- Menu overlay -->
             <div class="menu-overlay" id="menu-overlay">
                 <ul>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="<?php echo get_post_type_archive_link('about_page'); ?>">À propos</a></li>
+                    <li><a href="<?php echo site_url('/projets'); ?>">Projets</a></li>
+                    <li><a href="<?php echo site_url('/contact'); ?>">Contact</a></li>
+                    <li><a href="<?php echo site_url('/a-propos'); ?>">À propos</a></li>
                 </ul>
             </div>
         </nav>
